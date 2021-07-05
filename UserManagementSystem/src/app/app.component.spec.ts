@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular12-With-clarity'`, () => {
+  it(`should have as title 'UserManagementSystem'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular12-With-clarity');
+    expect(app.title).toEqual('UserManagementSystem');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular12-With-clarity app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('UserManagementSystem app is running!');
   });
 });
