@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular12-With-clarity": {
+    "UserManagementSystem": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular12-With-clarity",
+            "optimization": false,
+            "outputPath": "dist/UserManagementSystem",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,22 +32,26 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@clr/icons/clr-icons.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
+              "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
+              "node_modules/@clr/icons/clr-icons.min.js"]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "6mb",
+                  "maximumError": "6mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6mb",
+                  "maximumError": "6mb"
                 }
               ],
               "fileReplacements": [
@@ -72,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular12-With-clarity:build:production"
+              "browserTarget": "UserManagementSystem:build:production"
             },
             "development": {
-              "browserTarget": "angular12-With-clarity:build:development"
+              "browserTarget": "UserManagementSystem:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular12-With-clarity:build"
+            "browserTarget": "UserManagementSystem:build"
           }
         },
         "test": {
@@ -107,5 +112,5 @@
       }
     }
   },
-  "defaultProject": "angular12-With-clarity"
+  "defaultProject": "UserManagementSystem"
 }
